@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Purchase Tape Master</title>
+  <!-- base:css -->
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/feather/feather.css">
+  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/custom.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <style type="text/css">
+    select.form-control, .select2-container--default select.select2-selection--single, .select2-container--default .select2-selection--single select.select2-search__field, select.typeahead, select.tt-query, select.tt-hint {
+    padding: .7375rem .75rem;
+    border: 0;
+    outline: 1px solid
+#e4e6f6;
+color:
+    #666666;
+}
+  </style>
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search Projects.." aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item dropdown d-lg-flex d-none">
+                <button type="button" class="btn btn-info font-weight-bold">+ Create New</button>
+            </li>
+          <li class="nav-item dropdown d-flex">
+            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+              <i class="icon-air-play mx-0"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-normal">David Grey
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    The meeting is cancelled
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    New product launch
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Upcoming board meeting
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown d-flex mr-4 ">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="icon-cog"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
+              <a class="dropdown-item preview-item">
+                  <i class="icon-head"></i> Profile
+              </a>
+              <a class="dropdown-item preview-item">
+                  <i class="icon-inbox"></i> Logout
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown mr-4 d-lg-flex d-none">
+            <a class="nav-link count-indicatord-flex align-item s-center justify-content-center" href="#">
+              <i class="icon-grid"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="user-profile">
+          <div class="user-image">
+            <img src="../../images/faces/face28.png">
+          </div>
+          <div class="user-name">
+              Edward Spencer
+          </div>
+          <div class="user-designation">
+              Developer
+          </div>
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="icon-box menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#masters" aria-expanded="false" aria-controls="masters">
+              <i class="icon-disc menu-icon"></i>
+              <span class="menu-title">Masters</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="masters">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/employee-master.html">Employee Master</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/channel-master.html">Channel Master</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/user-login-master.html">User Login Master</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/password-change.html">Password Change</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/form-search.html">Form Search</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#programming" aria-expanded="false" aria-controls="programming">
+              <i class="icon-disc menu-icon"></i>
+              <span class="menu-title">Programming</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="programming">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/audience_master.html">Audience Master Entry</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/type_master.html">Program Type Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/aquition_master.html">Program Aquition Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/hourly_inventor.html">Hourly Inventory Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/program_master.html">Program Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/original_repeat.html">Original Repeat Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/tx_version_master.html">TX version Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/censorship.html">Censorship Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/classification_master.html">Classification Master</a></li>
+
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/language_master.html">Language Master</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="../../pages/forms/movie_planner.html">Movie planner</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="../../pages/forms/program_segment.html">Program Segment</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="../../pages/forms/Fpc_master.html">Fpc Master</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="../../pages/forms/daily_fpc.html">Daily Fpc</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/banner_master.html">Banner Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/episode_title.html">Episode Title</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/fpc_report.html">FPC Report</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/timeband_wise.html">Timeband Wise</a></li>
+
+                </ul>
+              </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#scheduling" aria-expanded="false" aria-controls="scheduling">
+              <i class="icon-disc menu-icon"></i>
+              <span class="menu-title">Scheduling</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="scheduling">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/promo_type.html">Promo Type Master</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/promo_master.html">Promo Master</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/promo_scheduling_details.html">Promo Scheduling Details</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/commercial_scheduling.html">Commercial Scheduling</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/final_log.html">Final Log</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/commercial_cue.html">Commercial Cue Sheet</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/transmission_cue.html">Transmission cue Sheet</a></li>
+
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#library" aria-expanded="false" aria-controls="library">
+              <i class="icon-disc menu-icon"></i>
+              <span class="menu-title">Library</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="library">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/library_master.html">Library Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/music_agency_master.html">Music Agency Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/tape_formate_master.html">Tape Format Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/vendor_master.html">Vendor Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/purpose_master.html">Purpose Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/purchase_tape_master.html">Purchase Tape Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/rack_master.html">Rack Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/rack_view.html">Rack View</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/content_type_master.html">Content type Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/purchase_company_master.html">Purchase Company Master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/tape_series_entry.html">Tape Series entry</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/agency_commission_master.html">Agency Commission master</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/library_search.html">Library search</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/issue_of_tapes.html">Issue of tapes</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/return_of_tapes.html">Return of tapes</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/non_returnable_tape.html">Non-Returnable tapes</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/recycle_of_tapes.html">Recycle of Tapes</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/discarded_of_tapes.html">Discarded of tapes</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/update_record_tape_entry.html">Update record tape entry</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/opening_stock_market.html">Opening stock market</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/employee_outstanding.html">Employee Outstanding</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/purchase_report.html">Purchase report</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/recorded_tape_record.html">Recorded tape record</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/issue_blank_tape_record.html">Issue Blank Tape report</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/issue_recorded_tape_record.html">Issue recorded tape record</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/recycled_tape_record.html">Recycled Tape record</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/discarded_tape_report.html">Discarded tape report</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/day_wise_opening_stock.html">Day wise Opening Stock</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/return_tape_summary.html">Return tape summary</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../pages/forms/non_returbable_tape_report.html">NON returnable tape report</a></li>
+                </ul>
+              </div>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="pages/forms/basic_elements.html">
+              <i class="icon-file menu-icon"></i>
+              <span class="menu-title">Form elements</span>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="pages/charts/chartjs.html">
+              <i class="icon-pie-graph menu-icon"></i>
+              <span class="menu-title">Charts</span>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="pages/tables/basic-table.html">
+              <i class="icon-command menu-icon"></i>
+              <span class="menu-title">Tables</span>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="pages/icons/feather-icons.html">
+              <i class="icon-help menu-icon"></i>
+              <span class="menu-title">Icons</span>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+              </ul>
+            </div>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="docs/documentation.html">
+              <i class="icon-book menu-icon"></i>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">New Tapes Reciept</h4>
+                  <p class="card-description">  </p>
+
+
+                        <form class="forms-sample">
+                          <div class="form-group">
+                          <label class=" " for="exampleInputpostcode1">Library</label>
+                          <div class="">
+                            <select class="form-control">
+                              <option>News</option>
+                              <option>NewsLib</option>
+                              <option>News</option>
+                              <option>NewsLib</option>
+                            </select>
+                          </form>
+              <!--     <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Name</label>
+                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder=" name">
+                    </div>
+                  </form> -->
+                    <div class=" row mt-4">
+                       <div class="col-sm-6">
+                       <form class="forms-sample">
+                         <div class="form-group">
+                         <label for="exampleInputInvoice1">Invoice No.</label>
+                            <input type="text" class="form-control" id="exampleInputInvoice1" placeholder=" Invoice No. "/>
+                        </div>
+                       </form>
+                    </div>
+                        <div class="col-md-6">
+                          <form class="forms-sample">
+                           <div class="form-group">
+                           <label for="exampleInputDate1">Date</label>
+                            <input type="text" class="form-control" id="exampleInputDate1" placeholder="10/04/2015 "/>
+                        </div>
+                      </form>
+
+                        </div>
+                       </div>
+
+
+                       <form class="forms-sample">
+                         <div class="form-group">
+                         <label for="exampleInputInvoice1">Challan No.</label>
+                            <input type="text" class="form-control" id="exampleInputInvoice1" placeholder=" Challan No. "/>
+                        </div>
+                       </form>
+
+
+                        <form class="forms-sample mt-3">
+                          <div class="form-group">
+                          <label class=" " for="exampleInputVendor1">Vendor</label>
+                          <div class="">
+                            <select class="form-control">
+                              <option>Test Yogesh</option>
+                              <option>Test1</option>
+                              <option>Test2</option>
+                              <option>Test3</option>
+                            </select>
+                          </form>
+                           <form class="forms-sample mt-3">
+                          <div class="form-group">
+                          <label class=" " for="exampleInputOnAccount1">On Account</label>
+                          <div class="">
+                            <select class="form-control">
+                              <option>Delhi Doordrashan</option>
+                              <option>Delhi Doordrashan1</option>
+                              <option>Delhi Doordrashan2</option>
+                              <option>Delhi Doordrashan3</option>
+                            </select>
+                          </form>
+
+
+                           <form class="forms-sample mt-3">
+                          <div class="form-group">
+                          <label class=" " for="exampleInputSubmitted1">Submitted By</label>
+                          <div class="">
+                            <select class="form-control">
+                              <option>Ashish</option>
+                              <option>Ashish1</option>
+                              <option>Ashish2</option>
+                              <option>Ashish3</option>
+                            </select>
+                          </form>
+
+                         <br/>
+                         <hr />
+
+                         <div class="row">
+                           <div class="col-md-8">
+                          <form class="forms-sample mt-3">
+                          <div class="form-group">
+                          <label class=" " for="exampleInputOnAccount1">Rack Name</label>
+                            <select class="form-control">
+                              <option>Delhi Doordrashan</option>
+                              <option>Delhi Doordrashan1</option>
+                              <option>Delhi Doordrashan2</option>
+                              <option>Delhi Doordrashan3</option>
+                            </select>
+                          </div>
+                          </form>
+                      </div>
+                         <div class="col-md-4">
+                           <div class="form-group mt-16">
+                          <div class="form-check mt-4">
+                            <label class="form-check-label m-t-15">
+                              <input type="checkbox" class="form-check-input">
+                              Opening Stock
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+
+                       <div class=" row mt-4">
+                       <div class="col-sm-6">
+                       <form class="forms-sample">
+                         <div class="form-group">
+                         <label for="exampleInputInvoice1">Tape Format</label>
+                           <select class="form-control">
+                              <option>Beta</option>
+                              <option>Beta1</option>
+                              <option>Beta2</option>
+                              <option>Beta3</option>
+                            </select>
+                        </div>
+                       </form>
+                    </div>
+                        <div class="col-md-6">
+                          <form class="forms-sample">
+                           <div class="form-group">
+                           <label for="exampleInputDuration1">Duration</label>
+                            <input type="text" class="form-control" id="exampleInputDuration1" placeholder="duration "/>
+                          </div>
+                         </form>
+                        </div>
+                       </div>
+
+                       <div class=" row mt-4">
+                       <div class="col-sm-4">
+                       <form class="forms-sample">
+                         <div class="form-group">
+                        <label for="exampleInputQuantity1">Quantity</label>
+                            <input type="text" class="form-control" id="exampleInputQuantity1" placeholder="quantity "/>
+                        </div>
+                       </form>
+                    </div>
+                        <div class="col-md-4">
+                          <form class="forms-sample">
+                           <div class="form-group">
+                           <label for="exampleInputRate1">Rate</label>
+                            <input type="text" class="form-control" id="exampleInputRate1" placeholder="rate"/>
+                          </div>
+                         </form>
+                        </div>
+
+                        <div class="col-md-4">
+                          <form class="forms-sample">
+                           <div class="form-group">
+                           <label for="exampleInputAmount1">Amount</label>
+                            <input type="text" class="form-control" id="exampleInputAmount1" placeholder="amount"/>
+                          </div>
+                         </form>
+                        </div>
+                       </div>
+
+                      <div class=" row mt-4">
+                      <div class="col-sm-4">
+                      &nbsp;
+                    </div>
+                        <div class="col-md-4">
+                          <form class="forms-sample">
+                           <div class="form-group">
+                           <label for="exampleInputCST1">CST(%)</label>
+                            <input type="text" class="form-control" id="exampleInputCST1" placeholder="CST"/>
+                          </div>
+                         </form>
+                        </div>
+
+                        <div class="col-md-4">
+                          <form class="forms-sample">
+                           <div class="form-group">
+                           <label for="exampleInputCSTAmount1">CST Amount</label>
+                            <input type="text" class="form-control" id="exampleInputCSTAmount1" placeholder="cstamount"/>
+                          </div>
+                         </form>
+                        </div>
+                       </div>
+
+                        <div class=" row mt-4">
+                        <div class="col-sm-4">
+                        &nbsp;
+                        </div>
+                        <div class="col-md-4">
+                          &nbsp;
+                        </div>
+
+                        <div class="col-md-4">
+                          <form class="forms-sample">
+                           <div class="form-group">
+                           <label for="exampleInputTotalAmount1">Total Amount</label>
+                            <input type="text" class="form-control" id="exampleInputTotalAmount1" placeholder="total amount"/>
+                          </div>
+                         </form>
+                        </div>
+                       </div>
+
+                      </div>
+                     </div>
+                     </div>
+                     </div>
+                     </div>
+                     </div></div>
+                     </div>
+
+
+                     <div class="row">
+                       <div class="col-md-5 mb-4">
+                     <p>Genration of Serial No.</p> </div>
+                      <div class="col-md-6">
+                     <button type="submit" class="btn btn-info mr-2">Barcode Printing</button>
+                   </div>
+                 </div>
+                    <button type="submit" class="btn btn-info mr-2  mt-2">Save</button>
+                    <button class="btn btn-info  mt-2 mr-2">Refresh</button>
+
+                    <button type="submit" class="btn btn-info mr-2  mt-2">Clear</button>
+                    <button class="btn btn-info  mt-2">Exit</button>
+
+
+
+                     <div class="table-responsive mt-4">
+                    <table class="table table-striped  table-hover">
+                      <thead class="text-white-50 bg-dark">
+                        <tr class="text-white-50 bg-dark">
+                          <th>
+                            Sr No.
+                          </th>
+                          <th>
+                            Accession no.
+                          </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">
+                          1
+                          </td>
+                          <td>
+                           0000002
+                          </td>
+                          </tr>
+
+                         <tr>
+                          <td class="py-1">
+                          2
+                          </td>
+                          <td>
+                            Herman Beck
+                          </td>
+                        </tr>
+
+                          <tr>
+                          <td class="py-1">
+                          3
+                          </td>
+                          <td>
+                            Herman Beck
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">List of Invoices</h4>
+                  <p class="card-description">   </p>
+
+                       <form class="forms-sample">
+                          <div class="form-group">
+                          <label>Library</label>
+                          <select class="form-control">
+                              <option>News  NewsLib</option>
+                              <option>NewsLib</option>
+                              <option>News</option>
+                              <option>NewsLib</option>
+                            </select>
+                        </div>
+                       </form>
+
+                          <form class="forms-sample">
+                          <div class="form-group">
+                          <select class="form-control">
+                              <option>123</option>
+                              <option>1324</option>
+                              <option>5656</option>
+                            </select>
+                        </div>
+                       </form>
+
+                        <form class="forms-sample">
+                          <div class="form-group">
+                             <label>List of tape formats(Invoice wise...)</label>
+                          <select class="form-control">
+                              <option>123</option>
+                              <option>1324</option>
+                              <option>5656</option>
+                            </select>
+                        </div>
+                       </form>
+
+                       <form class="forms-sample">
+                          <div class="form-group">
+                             <label>Bar Code</label>
+                           <input type="text" class="form-control" id="exampleInputBarCode1" placeholder=" "/>
+                        </div>
+                       </form>
+
+
+                       <button type="submit" class="btn btn-info mr-2 float-right">Print</button>
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2019 <a href="https://www.templatewatch.com/" target="_blank" class="text-muted"></a>. All rights reserved.</span>
+           <!--  <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="icon-heart"></i></span> -->
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="../../vendors/select2/select2.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script src="../../js/file-upload.js"></script>
+  <script src="../../js/typeahead.js"></script>
+  <script src="../../js/select2.js"></script>
+  <!-- End custom js for this page-->
+
+   <script type="text/javascript">
+        </script>
+</body>
+
+</html>
